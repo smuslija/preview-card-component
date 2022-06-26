@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap");
+
+:root {
+  --bg-btn: hsl(158, 36%, 37%);
+  --bg-body: hsl(30, 38%, 92%);
+  --bg-card: hsl(0, 0%, 100%);
+  --clr-title: hsl(212, 21%, 14%);
+  --clr-text: hsl(228, 12%, 48%);
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 14px;
+  background-color: var(--bg-body);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  background-color: var(--bg-card);
+  border-radius: 1em;
+  margin-top: 10vh;
+  max-width: 50%;
+}
+
+.card > * {
+  flex-basis: 100%;
+}
+
+.card__image {
+  background-image: url("./images/image-product-desktop.jpg");
+  background-size: cover;
+  background-position: center center;
+  flex: 1 1 50%;
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+}
+
+.card__side {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  padding: 2em;
+  flex: 1 1 50%;
+}
+
+.card__sub-title {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  color: var(--clr-text);
+  font-size: 1.2rem;
+}
+
+.card__title {
+  font-family: "Fraunces", serif;
+  font-size: 2.4rem;
+  color: var(--clr-title);
+}
+
+.card__text {
+  font-family: "Montserrat", sans-serif;
+  color: var(--clr-text);
+  line-height: 1.3rem;
+  letter-spacing: 0.15rem;
+}
+
+.card__prices-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-family: "Fraunces";
+}
+
+.card__actual-price {
+  font-size: 1.6rem;
+  color: var(--bg-btn);
+}
+
+.card__old-price {
+  font-size: 0.8rem;
+  text-decoration: line-through;
+  font-weight: 100;
+  color: var(--clr-text);
+}
+
+.btn {
+  background-color: var(--bg-btn);
+  color: var(--bg-card);
+  border: transparent;
+  outline: none;
+  font-family: "Montserrat", sans-serif;
+  padding: 1rem 0;
+  border-radius: 0.3rem;
+  transition: all 200ms ease-in-out;
+}
+
+.btn:hover {
+  -webkit-filter: brightness(70%);
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .card {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    max-width: 90%;
+  }
+
+  .card__image {
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 1rem;
+  }
+}
